@@ -40,8 +40,8 @@ function Navigation() {
   };
 
   const navItems = [
-    
-    { id: 'Accueil', label: 'Accueil', icon: '👤' },
+
+    { id: 'about', label: 'Accueil', icon: '👤' },
     { id: 'projects', label: 'Projets', icon: '💼' },
     { id: 'experience', label: 'Expérience', icon: '📈' },
     { id: 'formation', label: 'Formation', icon: '🎓' },
