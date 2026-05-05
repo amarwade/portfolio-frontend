@@ -1,0 +1,76 @@
+import { useEffect, useState } from "react";
+import { useScrollReveal } from "./hooks/useScrollReveal";
+import HeroSection from "./components/HeroSection";
+import ExperienceSection from "./components/ExperienceSection";
+import FormationSection from "./components/FormationSection";
+import CertificationsSection from "./components/CertificationsSection";
+import SkillsSection from "./components/SkillsSection";
+import ProjectsSection from "./components/ProjectsSection";
+import ContactSection from "./components/ContactSection";
+import Navigation from "./components/Navigation";
+import {
+  profileData,
+  skillsByCategory,
+  formationData,
+  certificationData,
+  experienceData,
+} from "./data/portfolioData";
+
+function App() {
+  useScrollReveal();
+  const [theme, setTheme] = useState("dark");
+
+  useEffect(() => {
+    document.documentElement.style.scrollBehavior = "smooth";
+  }, []);
+
+  useEffect(() => {
+    const savedTheme = localStorage.getItem("theme");
+    if (savedTheme === "light" || savedTheme === "dark") {
+      setTheme(savedTheme);
+      return;
+    }
+
+    const supportsMatchMedia = typeof window.matchMedia === "function";
+    const prefersDark = supportsMatchMedia
+      ? window.matchMedia("(prefers-color-scheme: dark)").matches
+      : true;
+    setTheme(prefersDark ? "dark" : "light");
+  }, []);
+
+  useEffect(() => {
+    document.documentElement.setAttribute("data-theme", theme);
+    localStorage.setItem("theme", theme);
+  }, [theme]);
+
+  return (
+    <>
+      <div className="page-atmosphere" aria-hidden="true">
+        <div className="page-atmosphere__orb page-atmosphere__orb--1" />
+        <div className="page-atmosphere__orb page-atmosphere__orb--2" />
+        <div className="page-atmosphere__orb page-atmosphere__orb--3" />
+        <div className="page-atmosphere__grid" />
+      </div>
+      
+      <Navigation />
+      
+      <div className="app-shell">
+        <a className="skip-link" href="#main-content">
+          Aller au contenu
+        </a>
+
+        <main id="main-content" tabIndex={-1}>
+          <HeroSection profile={profileData} />
+          <ExperienceSection items={experienceData} />
+          <FormationSection items={formationData} />
+          <CertificationsSection items={certificationData} />
+          <SkillsSection categories={skillsByCategory} />
+          <ProjectsSection />
+          <ContactSection />
+        </main>
+      </div>
+    </>
+  );
+}
+
+export default App;
