@@ -420,21 +420,6 @@ a:hover {
   align-self: flex-start;
 }
 
-.hero-photo-ring {
-  position: absolute;
-  inset: -3px;
-  border-radius: 26px;
-  background: linear-gradient(
-    135deg,
-    rgba(120, 170, 255, 0.85),
-    rgba(212, 175, 55, 0.65),
-    rgba(130, 100, 255, 0.55)
-  );
-  opacity: 0.9;
-  z-index: 0;
-  animation: floatOrb 18s ease-in-out infinite;
-}
-
 .hero-photo {
   position: relative;
   z-index: 1;
@@ -454,11 +439,7 @@ a:hover {
   height: 100%;
   object-fit: cover;
   object-position: center 20%;
-  transition: transform 0.5s cubic-bezier(0.22, 1, 0.36, 1);
-}
-
-.hero-photo:hover .hero-photo__img {
-  transform: scale(1.04);
+  transition: none;
 }
 
 .hero-photo__fallback {
@@ -1806,9 +1787,7 @@ h2 {
   transition: transform 0.3s ease;
 }
 
-.hero-photo:hover {
-  transform: scale(1.05);
-}
+/* Hover effects removed for cleaner design */
 
 .hero-photo__img {
   width: 100%;
@@ -1826,23 +1805,6 @@ h2 {
   font-weight: 700;
   color: #9ec5ff;
   background: linear-gradient(135deg, rgba(120, 160, 255, 0.1) 0%, rgba(120, 160, 255, 0.05) 100%);
-}
-
-.hero-photo-ring {
-  position: absolute;
-  inset: -10px;
-  border: 2px solid rgba(120, 160, 255, 0.2);
-  border-radius: 25px;
-  animation: rotate 20s linear infinite;
-}
-
-@keyframes rotate {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
 }
 
 /* Light theme adjustments */
@@ -3113,5 +3075,158 @@ h2 {
   
   .formation-info {
     font-size: 0.85rem;
+  }
+}
+
+/* Contact Info Section Styles */
+.contact-info-section {
+  margin-top: 3rem;
+  padding: 2rem;
+  background: rgba(15, 23, 42, 0.5);
+  border: 1px solid rgba(120, 160, 255, 0.2);
+  border-radius: 16px;
+  backdrop-filter: blur(10px);
+}
+
+:root[data-theme="light"] .contact-info-section {
+  background: rgba(255, 255, 255, 0.7);
+  border-color: rgba(59, 130, 246, 0.2);
+}
+
+.contact-info-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 1.5rem;
+  margin-bottom: 1.5rem;
+}
+
+.contact-info-item {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  padding: 1rem;
+  background: rgba(120, 160, 255, 0.1);
+  border-radius: 12px;
+  transition: all 0.3s ease;
+}
+
+.contact-info-item:hover {
+  background: rgba(120, 160, 255, 0.2);
+  transform: translateY(-2px);
+}
+
+.contact-info-item svg {
+  color: #7c9cff;
+  flex-shrink: 0;
+}
+
+.contact-info-item a {
+  color: #a5b4fc;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.contact-info-item a:hover {
+  color: #7c9cff;
+}
+
+:root[data-theme="light"] .contact-info-item {
+  background: rgba(59, 130, 246, 0.1);
+}
+
+:root[data-theme="light"] .contact-info-item:hover {
+  background: rgba(59, 130, 246, 0.2);
+}
+
+:root[data-theme="light"] .contact-info-item svg {
+  color: #4f46e5;
+}
+
+:root[data-theme="light"] .contact-info-item a {
+  color: #4f46e5;
+}
+
+:root[data-theme="light"] .contact-info-item a:hover {
+  color: #3730a3;
+}
+
+.contact-languages {
+  text-align: center;
+  padding: 1rem;
+  margin-bottom: 1.5rem;
+  background: rgba(120, 160, 255, 0.05);
+  border-radius: 12px;
+}
+
+.languages-label-contact {
+  font-weight: 600;
+  color: #7c9cff;
+  margin-right: 0.5rem;
+}
+
+.languages-text {
+  color: #a5b4fc;
+}
+
+:root[data-theme="light"] .languages-label-contact {
+  color: #4f46e5;
+}
+
+:root[data-theme="light"] .languages-text {
+  color: #64748b;
+}
+
+.contact-social {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+}
+
+.social-link-contact {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.75rem 1.25rem;
+  background: rgba(120, 160, 255, 0.1);
+  border: 1px solid rgba(120, 160, 255, 0.2);
+  border-radius: 10px;
+  color: #a5b4fc;
+  text-decoration: none;
+  transition: all 0.3s ease;
+}
+
+.social-link-contact:hover {
+  background: rgba(120, 160, 255, 0.2);
+  border-color: rgba(120, 160, 255, 0.4);
+  transform: translateY(-2px);
+}
+
+:root[data-theme="light"] .social-link-contact {
+  background: rgba(59, 130, 246, 0.1);
+  border-color: rgba(59, 130, 246, 0.2);
+  color: #4f46e5;
+}
+
+:root[data-theme="light"] .social-link-contact:hover {
+  background: rgba(59, 130, 246, 0.2);
+  border-color: rgba(59, 130, 246, 0.4);
+}
+
+.contact-actions {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+  margin-top: 1.5rem;
+}
+
+.contact-actions .button {
+  min-width: 230px;
+  padding: 0.85rem 1.5rem;
+}
+
+@media (max-width: 768px) {
+  .contact-actions {
+    width: 100%;
+    justify-content: center;
   }
 }

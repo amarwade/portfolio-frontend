@@ -1,4 +1,11 @@
+import { SkillIcons } from './Icons';
+
 function SkillsSection({ categories }) {
+  const getSkillIcon = (title) => {
+    const IconComponent = SkillIcons[title] || SkillIcons.Default;
+    return <IconComponent size={24} />;
+  };
+
   return (
     <section id="skills" className="section section-cv reveal-on-scroll">
       <h2 className="cv-section-title">Compétences</h2>
@@ -7,12 +14,7 @@ function SkillsSection({ categories }) {
           <div key={category.id} className="skill-category-card" style={{ animationDelay: `${index * 0.1}s` }}>
             <div className="skill-category-header">
               <div className="skill-icon">
-                {category.title === 'Frontend' && '🎨'}
-                {category.title === 'Backend' && '⚙️'}
-                {category.title === 'Database' && '🗄️'}
-                {category.title === 'DevOps' && '🚀'}
-                {category.title === 'Tools' && '🛠️'}
-                {!['Frontend', 'Backend', 'Database', 'DevOps', 'Tools'].includes(category.title) && '💡'}
+                {getSkillIcon(category.title)}
               </div>
               <h3 className="skill-category-title">{category.title}</h3>
               <div className="skill-count">{category.items.length}</div>
