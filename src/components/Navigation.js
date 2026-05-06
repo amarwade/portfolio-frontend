@@ -1,4 +1,5 @@
 import { useState, useEffect } from 'react';
+import { Home, Briefcase, TrendingUp, GraduationCap, Mail, Sun, Moon } from 'lucide-react';
 import './Navigation.css';
 
 function Navigation() {
@@ -40,12 +41,11 @@ function Navigation() {
   };
 
   const navItems = [
-
-    { id: 'about', label: 'Accueil', icon: '👤' },
-    { id: 'projects', label: 'Projets', icon: '💼' },
-    { id: 'experience', label: 'Expérience', icon: '📈' },
-    { id: 'formation', label: 'Formation', icon: '🎓' },
-    { id: 'contact', label: 'Contact', icon: '📧' }
+    { id: 'about', label: 'Accueil', Icon: Home },
+    { id: 'projects', label: 'Projets', Icon: Briefcase },
+    { id: 'experience', label: 'Expérience', Icon: TrendingUp },
+    { id: 'formation', label: 'Formation', Icon: GraduationCap },
+    { id: 'contact', label: 'Contact', Icon: Mail }
   ];
 
   return (
@@ -65,7 +65,7 @@ function Navigation() {
                     className="nav-link"
                     onClick={() => scrollToSection(item.id)}
                   >
-                    <span className="nav-icon">{item.icon}</span>
+                    <span className="nav-icon"><item.Icon size={18} /></span>
                     <span className="nav-label">{item.label}</span>
                   </button>
                 </li>
@@ -82,7 +82,7 @@ function Navigation() {
               aria-pressed={theme === 'light'}
               title={theme === 'dark' ? 'Thème clair' : 'Thème sombre'}
             >
-              {theme === 'dark' ? '☀️' : '🌙'}
+              {theme === 'dark' ? <Sun size={20} /> : <Moon size={20} />}
             </button>
             <button
               className="mobile-menu-toggle"
