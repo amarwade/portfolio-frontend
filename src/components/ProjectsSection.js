@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import { getProjects } from "../services/projectService";
 import ProjectCard from "./ProjectCard";
+import { IconFolder, IconAlertTriangle } from './Icons';
 
 function ProjectsSection() {
   const [projects, setProjects] = useState([]);
@@ -66,7 +67,7 @@ function ProjectsSection() {
       
       {status === "error" && (
         <div className="error-state">
-          <div className="error-icon">⚠️</div>
+          <div className="error-icon"><IconAlertTriangle size={48} /></div>
           <p>Impossible de récupérer les projets pour le moment.</p>
           <button onClick={() => window.location.reload()} className="retry-button">
             Réessayer
@@ -76,7 +77,7 @@ function ProjectsSection() {
       
       {status === "success" && projects.length === 0 && (
         <div className="empty-state">
-          <div className="empty-icon">📁</div>
+          <div className="empty-icon"><IconFolder size={48} /></div>
           <p>Aucun projet publié pour le moment.</p>
         </div>
       )}

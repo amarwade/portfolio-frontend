@@ -1,3 +1,5 @@
+import { IconGraduationCap } from './Icons';
+
 function FormationSection({ items }) {
   return (
     <section id="formation" className="section section-cv reveal-on-scroll">
@@ -6,7 +8,7 @@ function FormationSection({ items }) {
         {items.map((entry, index) => (
           <div key={entry.id} className="formation-item" style={{ animationDelay: `${index * 0.15}s` }}>
             <div className="formation-dot">
-              <span className="dot-icon">🎓</span>
+              <span className="dot-icon"><IconGraduationCap size={16} /></span>
             </div>
             <div className="formation-card-compact">
               <div className="formation-period-small">{entry.period}</div>

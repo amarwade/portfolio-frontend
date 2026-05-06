@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { IconLaptop } from './Icons';
 
 function ProjectCard({ project, index }) {
   const [isHovered, setIsHovered] = useState(false);
@@ -6,7 +7,7 @@ function ProjectCard({ project, index }) {
   const technologies = project.tech ? project.tech.split(',').map(t => t.trim()) : [];
 
   return (
-    <article 
+    <article
       className={`project-card enhanced ${isHovered ? 'hovered' : ''}`}
       onMouseEnter={() => setIsHovered(true)}
       onMouseLeave={() => setIsHovered(false)}
@@ -17,7 +18,7 @@ function ProjectCard({ project, index }) {
           {String(index + 1).padStart(2, '0')}
         </div>
         <div className="project-card__icon">
-          💻
+          <IconLaptop size={24} />
         </div>
       </div>
 
