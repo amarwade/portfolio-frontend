@@ -1,33 +1,87 @@
-import { SkillIcons } from './Icons';
+import { 
+  IconPalette, 
+  IconSettings, 
+  IconDatabase, 
+  IconRocket,
+  IconLightbulb,
+  IconLaptop,
+  IconTool
+} from './Icons';
+
+// Map category IDs to icons
+const categoryIcons = {
+  languages: IconPalette,
+  frameworks: IconRocket,
+  databases: IconDatabase,
+  architecture: IconLightbulb,
+  tools: IconTool,
+  systems: IconLaptop,
+};
+
+// Color schemes for each category
+const categoryColors = {
+  languages: { bg: '#ef4444', border: '#f87171', glow: 'rgba(239, 68, 68, 0.3)' },
+  frameworks: { bg: '#3b82f6', border: '#60a5fa', glow: 'rgba(59, 130, 246, 0.3)' },
+  databases: { bg: '#10b981', border: '#34d399', glow: 'rgba(16, 185, 129, 0.3)' },
+  architecture: { bg: '#8b5cf6', border: '#a78bfa', glow: 'rgba(139, 92, 246, 0.3)' },
+  tools: { bg: '#f59e0b', border: '#fbbf24', glow: 'rgba(245, 158, 11, 0.3)' },
+  systems: { bg: '#06b6d4', border: '#22d3ee', glow: 'rgba(6, 182, 212, 0.3)' },
+};
 
 function SkillsSection({ categories }) {
-  const getSkillIcon = (title) => {
-    const IconComponent = SkillIcons[title] || SkillIcons.Default;
-    return <IconComponent size={24} />;
-  };
-
   return (
     <section id="skills" className="section section-cv reveal-on-scroll">
-      <h2 className="cv-section-title">Compétences</h2>
-      <div className="skills-enhanced">
-        {categories.map((category, index) => (
-          <div key={category.id} className="skill-category-card" style={{ animationDelay: `${index * 0.1}s` }}>
-            <div className="skill-category-header">
-              <div className="skill-icon">
-                {getSkillIcon(category.title)}
-              </div>
-              <h3 className="skill-category-title">{category.title}</h3>
-              <div className="skill-count">{category.items.length}</div>
-            </div>
-            <div className="skill-items">
-              {category.items.map((skill, skillIndex) => (
-                <div key={skill} className="skill-item" style={{ animationDelay: `${index * 0.1 + skillIndex * 0.05}s` }}>
-                  <span className="skill-name">{skill}</span>
+      <h2 className="cv-section-title">Compétences techniques</h2>
+      <p className="skills-subtitle">Technologies et outils que j'utilise au quotidien</p>
+      
+      <div className="skills-grid-modern">
+        {categories.map((category, index) => {
+          const IconComponent = categoryIcons[category.id] || IconSettings;
+          const colors = categoryColors[category.id] || categoryColors.tools;
+          
+          return (
+            <div 
+              key={category.id} 
+              className="skill-category-modern"
+              style={{ 
+                animationDelay: `${index * 0.1}s`,
+                '--category-color': colors.bg,
+                '--category-border': colors.border,
+                '--category-glow': colors.glow
+              }}
+            >
+              <div className="skill-category-header-modern">
+                <div 
+                  className="skill-icon-modern"
+                  style={{ 
+                    background: `linear-gradient(135deg, ${colors.bg}20, ${colors.bg}10)`,
+                    borderColor: colors.border
+                  }}
+                >
+                  <IconComponent size={22} />
                 </div>
-              ))}
+                <h3 className="skill-category-title-modern">{category.title}</h3>
+                <span className="skill-count-modern">{category.items.length}</span>
+              </div>
+              
+              <div className="skill-tags-container">
+                {category.items.map((skill, skillIndex) => (
+                  <span 
+                    key={skill} 
+                    className="skill-tag"
+                    style={{ 
+                      animationDelay: `${index * 0.1 + skillIndex * 0.03}s`,
+                      borderColor: colors.border,
+                      background: `linear-gradient(135deg, ${colors.bg}15, transparent)`
+                    }}
+                  >
+                    {skill}
+                  </span>
+                ))}
+              </div>
             </div>
-          </div>
-        ))}
+          );
+        })}
       </div>
     </section>
   );
