@@ -31,14 +31,14 @@ const initialErrors = {
 function ContactSection() {
   // State to track current form field values
   const [formData, setFormData] = useState(initialFormState);
-  
+
   // State to track validation errors for each field
   const [errors, setErrors] = useState(initialErrors);
-  
+
   // State to track which fields have been touched (interacted with)
   // Used to show validation feedback only after user interaction
   const [touched, setTouched] = useState({});
-  
+
   // Form submission status: 'idle' | 'loading' | 'success' | 'error'
   const [status, setStatus] = useState("idle");
 
@@ -50,7 +50,7 @@ function ContactSection() {
    */
   const validateField = (name, value) => {
     let error = "";
-    
+
     switch (name) {
       case "name":
         // Name is required and must be at least 2 characters
@@ -87,7 +87,7 @@ function ContactSection() {
       default:
         break;
     }
-    
+
     return error;
   };
 
@@ -98,7 +98,7 @@ function ContactSection() {
   const onChange = (event) => {
     const { name, value } = event.target;
     setFormData((prev) => ({ ...prev, [name]: value }));
-    
+
     // Only validate if the field has been touched (to avoid showing errors immediately)
     if (touched[name]) {
       const error = validateField(name, value);
@@ -139,7 +139,7 @@ function ContactSection() {
     setErrors(newErrors);
     // Mark all fields as touched to show all validation feedback
     setTouched(Object.keys(formData).reduce((acc, key) => ({ ...acc, [key]: true }), {}));
-    
+
     return isValid;
   };
 
@@ -149,7 +149,7 @@ function ContactSection() {
    */
   const onSubmit = async (event) => {
     event.preventDefault();
-    
+
     // Validate all fields before submitting
     if (!validateForm()) {
       return; // Stop if validation fails
@@ -160,13 +160,13 @@ function ContactSection() {
     try {
       // Send form data to backend API
       await sendContactMessage(formData);
-      
+
       // Reset form on success
       setFormData(initialFormState);
       setErrors(initialErrors);
       setTouched({});
       setStatus("success");
-      
+
       // Reset status after 5 seconds
       setTimeout(() => setStatus("idle"), 5000);
     } catch (error) {
@@ -179,7 +179,7 @@ function ContactSection() {
   return (
     <section id="contact" className="section section-cv reveal-on-scroll">
       <h2 className="cv-section-title">Contact</h2>
-      <p>Si vous souhaitez échanger davantage sur mon profil ou discuter d'une opportunité, je vous invite à me contacter via le formulaire prévu à cet effet.</p>
+      <p>Si vous souhaitez échanger davantage sur mon profil ou discuter d'une opportunité, je vous invite à me contacter.</p>
 
       <form id="contact-form" className="contact-form enhanced" onSubmit={onSubmit}>
         <div className="form-group">
@@ -263,7 +263,7 @@ function ContactSection() {
           <p>Message envoyé avec succès ! Je vous répondrai dans les plus brefs délais.</p>
         </div>
       )}
-      
+
       {/* Error message displayed if form submission fails */}
       {status === "error" && (
         <div className="form-status error">
