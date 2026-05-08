@@ -416,7 +416,7 @@ a:hover {
   justify-self: end;
   width: 100%;
   max-width: 380px;
-  margin-top: 6rem;
+  margin-top: 8rem;
   align-self: flex-start;
 }
 
@@ -1051,6 +1051,7 @@ h2 {
 
 .section-cv {
   max-width: 760px;
+  margin: 0 auto;
 }
 
 .cv-section-title {
