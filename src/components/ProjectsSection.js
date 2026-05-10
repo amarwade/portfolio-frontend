@@ -31,7 +31,7 @@ function ProjectsSection() {
   });
 
   const excludedFilters = [
-    "completableFuture",
+    "Programmation asynchrone",
     "Oauth2",
     "file i/o",
     "rest api",
@@ -43,7 +43,14 @@ function ProjectsSection() {
       p.tech
         ? p.tech
             .split(',')
-            .map(t => t.trim())
+            .map(t => {
+              const trimmed = t.trim();
+              // Normalize console/Console case
+              if (trimmed.toLowerCase() === 'console') {
+                return 'Console';
+              }
+              return trimmed;
+            })
             .filter(Boolean)
         : []
     )

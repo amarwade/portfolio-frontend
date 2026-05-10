@@ -1,12 +1,12 @@
 export const profileData = {
   name: "Amar WADE",
-  title: "Elève ingénieur en informatique — A la recherche d'alternance",
+  title: "A la recherche d'alternance en developpement logiciel",
   eyebrow: "Disponible en alternance · Backend & full stack",
   /** Une phrase d’accroche très visible sous le nom */
   //heroTagline:
     //"Du besoin métier à l’application en production : Java, Spring Boot, APIs sécurisées et produits web maintenables.",
   pitch:
-    "Élève ingénieur en informatique passionné par le développement et les nouvelles technologies. Je recherche une alternance à partir de septembre 2026 pour mettre en pratique mes connaissances en Java, Spring Boot et développement web, tout en contribuant à des projets concrets au sein d'une équipe technique. Curieux et motivé, je souhaite acquérir de l'expérience en entreprise et développer mes compétences en ingénierie logicielle, DevOps et architecture.",
+    "Etudiant en cycle ingénieur en informatique à l'EILCO (Calais), passionné par le développement web full stack. Formé au DUT Informatique avec mention Bien à l'École Supérieure Polytechnique de Dakar, j'ai acquis une solide maîtrise des technologies backend (Java, Spring Boot, PHP, REST API, MySQL) et frontend (JavaScript, Angular, HTML/CSS). Lors de mon stage chez InTouch Group, j'ai conçu et développé de bout en bout une application web sécurisée en gérant l'analyse fonctionnelle, la base de données, l'authentification OAuth2 et les tests API. Autodidacte et rigoureux, je complète constamment mes compétences par des certifications et une veille technologique active. À l'aise en environnement Agile, j'attache une importance particulière à la qualité et la sécurité des applications. Je recherche une alternance en développement web full stack à partir de septembre 2025.",
   /** Place ta photo dans frontend/public/ (ex. photo-profil.jpg) puis mets le bon nom de fichier ici */
   heroImage: "/photo-profil.jpg",
   heroImageAlt: "Amar WADE — développeur Java et applications web",
@@ -70,13 +70,13 @@ export const experienceData = [
     title: "Développeur d’application web",
     organization: "InTouch Group — Stage, Sénégal",
     highlights: [
-      "Analyse des besoins fonctionnels avec les équipes métiers",
-      "Conception et développement d’une application web sécurisée (Spring Boot, Vaadin)",
-      "Authentification avec Spring Security et Keycloak (OAuth2)",
-      "Conception base MySQL et optimisation des requêtes SQL",
-      "API REST — tests avec Postman",
-      "Maven, méthode Agile (Scrum), Git / GitHub",
-      "Correction d’anomalies en phase de tests et validation",
+      "Analyse des besoins fonctionnels avec les équipes métiers et rédaction des spécifications techniques",
+      "Conception et développement complet d'une application web sécurisée (Spring Boot, Vaadin) — de l'architecture à la mise en production",
+      "Implémentation d'une authentification sécurisée OAuth2 via Keycloak et Spring Security — gestion des rôles et des accès utilisateurs",
+      "Modélisation et conception de la base de données MySQL, optimisation des requêtes SQL",
+      "Développement et documentation d'API REST, tests et validation via Postman",
+      "Gestion de projet en méthodologie Agile (Scrum), versioning Git/GitHub, gestion des dépendances Maven",
+      "Détection et correction d'anomalies lors des phases de test et de recette fonctionnelle",
     ],
   },
 ];

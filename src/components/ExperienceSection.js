@@ -8,7 +8,23 @@ function ExperienceSection({ items }) {
         {items.map((entry, index) => (
           <div key={entry.id} className="experience-card" style={{ animationDelay: `${index * 0.1}s` }}>
             <div className="experience-header">
-              <div className="experience-icon"><IconBuilding size={24} /></div>
+              <div className="experience-icon">
+                {entry.id === "intouch" ? (
+                  <img 
+                    src="/intouch-group-logo.png" 
+                    alt="InTouch Group logo" 
+                    width={24} 
+                    height={24}
+                    onError={(e) => {
+                      // Fallback to building icon if logo not found
+                      e.target.style.display = 'none';
+                      e.target.nextSibling.style.display = 'block';
+                    }}
+                    style={{ display: 'block' }}
+                  />
+                ) : null}
+                <IconBuilding size={24} style={{ display: entry.id === "intouch" ? 'none' : 'block' }} />
+              </div>
               <div className="experience-period">{entry.period}</div>
             </div>
             <div className="experience-content">
