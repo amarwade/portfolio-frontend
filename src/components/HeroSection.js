@@ -65,7 +65,7 @@ function HeroSection({ profile }) {
       
       <div className="hero__grid">
         <div className={`hero__content ${isLoaded ? 'loaded' : ''}`}>
-          <div className="hero__badge" style={{ marginBottom: '1rem', marginTop: '2.5rem' }}>
+          <div className="hero__badge" style={{ marginBottom: '1rem'}}>
             <span className="badge-pulse"></span>
             {profile.eyebrow ?? "Portfolio"}
           </div>
