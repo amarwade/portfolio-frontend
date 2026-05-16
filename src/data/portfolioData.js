@@ -1,7 +1,7 @@
 export const profileData = {
   name: "Amar WADE",
   title: "Amar WADE",
-  eyebrow: "A la recherche d'alternance · Backend & full stack",
+  eyebrow: "A la recherche d'alternance · Apprenti ingénieur",
   pitch:
     "Élève ingénieur en informatique à l’EILCO, passionné par le développement web full stack et la conception d’applications performantes et sécurisées, je suis titulaire d’un DUT Informatique obtenu avec mention Bien à Dakar. Je maîtrise Java, Spring Boot, PHP, REST API, MySQL, JavaScript et Angular. Lors de mon stage chez Intouch Group, j’ai contribué au développement d’une application web sécurisée de gestion de contenu avec Spring Boot et Vaadin. Rigoureux, autonome et à l’aise avec les méthodes Agile, je recherche une alternance en développement web full stack à partir de septembre 2026.",
   /** Place ta photo dans frontend/public/ (ex. photo-profil.jpg) puis mets le bon nom de fichier ici */
