@@ -30,13 +30,7 @@ function ProjectsSection() {
     return techList.includes(filter.toLowerCase());
   });
 
-  const excludedFilters = [
-    "Programmation asynchrone",
-    "Oauth2",
-    "file i/o",
-    "rest api",
-    "spring security"
-  ];
+  const mainFilters = ["Java", "Spring Boot", "JavaScript", "PHP", "React", "C"];
 
   const uniqueTechnologies = [...new Set(
     projects.flatMap(p =>
@@ -56,7 +50,7 @@ function ProjectsSection() {
     )
   )]
     .sort()
-    .filter(tech => !excludedFilters.includes(tech.toLowerCase()));
+    .filter(tech => mainFilters.includes(tech));
 
   return (
     <section id="projects" className="section section-cv reveal-on-scroll projects-enhanced">
