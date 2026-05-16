@@ -65,21 +65,10 @@ function HeroSection({ profile }) {
       
       <div className="hero__grid">
         <div className={`hero__content ${isLoaded ? 'loaded' : ''}`}>
-          <div className="hero__badge">
+          <div className="hero__badge" style={{ marginBottom: '1rem', marginTop: '2.5rem' }}>
             <span className="badge-pulse"></span>
             {profile.eyebrow ?? "Portfolio"}
           </div>
-          
-          <h1 id="hero-heading" className="hero__title">
-            <span className="title-word" style={{ animationDelay: '0.1s' }}>
-              {profile.name.split(' ')[0]}
-            </span>
-            {profile.name.split(' ').slice(1).map((word, i) => (
-              <span key={i} className="title-word" style={{ animationDelay: `${0.2 + i * 0.1}s` }}>
-                {word}
-              </span>
-            ))}
-          </h1>
           
           {profile.heroTagline ? (
             <p className="hero-tagline">{profile.heroTagline}</p>
