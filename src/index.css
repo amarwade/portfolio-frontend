@@ -2765,7 +2765,7 @@ h2 {
   display: flex;
   align-items: flex-start;
   gap: 0.5rem;
-  margin-bottom: 0.7rem;
+  margin-bottom: 0.3rem;
   opacity: 0;
   animation: slideInFormation 0.6s cubic-bezier(0.22, 1, 0.36, 1) forwards;
   position: relative;
@@ -2785,13 +2785,13 @@ h2 {
 .formation-dot {
   width: 32px;
   height: 32px;
-  background: linear-gradient(135deg, #7c5cff 0%, #a855f7 100%);
+  background: linear-gradient(135deg, var(--accent) 0%, var(--accent-strong) 100%);
   border-radius: 50%;
   display: flex;
   align-items: center;
   justify-content: center;
   flex-shrink: 0;
-  box-shadow: 0 4px 20px rgba(124, 92, 255, 0.3);
+  box-shadow: 0 4px 20px rgba(107, 159, 255, 0.3);
   position: relative;
   z-index: 2;
 }
@@ -2819,7 +2819,7 @@ h2 {
   content: "";
   position: absolute;
   inset: 0;
-  background: linear-gradient(135deg, rgba(124, 92, 255, 0.05) 0%, transparent 60%);
+  background: linear-gradient(135deg, rgba(107, 159, 255, 0.05) 0%, transparent 60%);
   opacity: 0;
   transition: opacity 0.3s ease;
   pointer-events: none;
@@ -2827,7 +2827,7 @@ h2 {
 
 .formation-card-compact:hover {
   transform: translateY(-2px);
-  border-color: rgba(124, 92, 255, 0.4);
+  border-color: rgba(107, 159, 255, 0.4);
   box-shadow: 0 8px 30px rgba(0, 0, 0, 0.25);
 }
 
@@ -2836,32 +2836,30 @@ h2 {
 }
 
 :root[data-theme="light"] .formation-card-compact {
-  border-color: rgba(124, 92, 255, 0.2);
+  border-color: rgba(79, 124, 255, 0.2);
   box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
 }
 
 .formation-period-small {
   font-size: 0.85rem;
   font-weight: 600;
-  color: #a78bfa;
-  background: rgba(167, 139, 250, 0.1);
-  padding: 0.25rem 0.75rem;
-  border-radius: 12px;
-  border: 1px solid rgba(167, 139, 250, 0.2);
-  display: inline-block;
-  margin-bottom: 0.75rem;
+  color: var(--accent-strong);
+  padding: 0;
+  border-radius: 0;
+  border: none;
+  background: none;
+  display: block;
+  margin-bottom: 0.25rem;
 }
 
 :root[data-theme="light"] .formation-period-small {
-  color: #7c3aed;
-  background: rgba(124, 58, 237, 0.08);
-  border-color: rgba(124, 58, 237, 0.15);
+  color: #4f7cff;
 }
 
 .formation-degree {
-  font-size: 1.15rem;
+  font-size: 1.05rem;
   font-weight: 700;
-  margin: 0 0 0.5rem;
+  margin: 0 0 0.25rem;
   color: #e8ecff;
   font-family: var(--font-display);
   line-height: 1.3;
@@ -2872,9 +2870,9 @@ h2 {
 }
 
 .formation-school-name {
-  font-size: 0.95rem;
+  font-size: 0.9rem;
   color: #9fb0dc;
-  margin: 0 0 0.75rem;
+  margin: 0 0 0.25rem;
   display: flex;
   align-items: center;
   gap: 0.5rem;

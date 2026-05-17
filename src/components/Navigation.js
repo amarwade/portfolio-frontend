@@ -52,9 +52,9 @@ function Navigation() {
 
   const navItems = [
     { id: 'about', label: 'Accueil', Icon: Icons.Home },
-    { id: 'projects', label: 'Projets', Icon: Icons.Briefcase },
     { id: 'experience', label: 'Expérience', Icon: Icons.TrendingUp },
     { id: 'formation', label: 'Formation', Icon: Icons.GraduationCap },
+    { id: 'projects', label: 'Projets', Icon: Icons.Briefcase },
     { id: 'contact', label: 'Contact', Icon: Icons.Mail }
   ];
 

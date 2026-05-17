@@ -19,9 +19,10 @@ export const profileData = {
 export const formationData = [
   {
     id: "eilco",
-    period: "2025 – 2026",
+    period: "2025 – 2028",
     title: "Cycle ingénieur — Informatique",
     institution: "EILCO — École d’ingénieurs du Littoral Côte d’Opale",
+    detail: "En cours",
   },
   {
     id: "dut",
