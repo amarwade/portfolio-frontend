@@ -48,7 +48,7 @@ function Navigation() {
             <span className="brand-text">Amar WADE</span>
           </div>
 
-          <div className={`nav-menu ${isMobileMenuOpen ? 'open' : ''}`}>
+          <div id="primary-navigation" className={`nav-menu ${isMobileMenuOpen ? 'open' : ''}`}>
             <ul className="nav-list">
               {navItems.map((item) => (
                 <li key={item.id} className="nav-item">
@@ -68,7 +68,9 @@ function Navigation() {
             <button
               className="mobile-menu-toggle"
               onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-              aria-label="Toggle menu"
+              aria-label={isMobileMenuOpen ? 'Fermer le menu' : 'Ouvrir le menu'}
+              aria-expanded={isMobileMenuOpen}
+              aria-controls="primary-navigation"
             >
               <span className={`hamburger ${isMobileMenuOpen ? 'open' : ''}`}>
                 <span></span>

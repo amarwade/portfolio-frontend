@@ -1,5 +1,4 @@
 import { 
-  IconPalette, 
   IconSettings, 
   IconDatabase, 
   IconRocket,
@@ -10,19 +9,24 @@ import {
 
 // Map category IDs to icons
 const categoryIcons = {
-  languages: IconPalette,
-  frameworks: IconRocket,
+  backend: IconRocket,
+  frontend: IconLaptop,
   databases: IconDatabase,
+  security: IconSettings,
+  devops: IconRocket,
+  testing: IconTool,
   architecture: IconLightbulb,
   tools: IconTool,
   systems: IconLaptop,
 };
 
-// Color schemes for each category
 const categoryColors = {
-  languages: { bg: '#0f766e', border: '#5eead4', glow: 'rgba(15, 118, 110, 0.18)' },
-  frameworks: { bg: '#256d78', border: '#72c6c4', glow: 'rgba(37, 109, 120, 0.18)' },
+  backend: { bg: '#0f766e', border: '#5eead4', glow: 'rgba(15, 118, 110, 0.18)' },
+  frontend: { bg: '#256d78', border: '#72c6c4', glow: 'rgba(37, 109, 120, 0.18)' },
   databases: { bg: '#9a6b24', border: '#d6b16a', glow: 'rgba(154, 107, 36, 0.18)' },
+  security: { bg: '#55786c', border: '#9bc5af', glow: 'rgba(85, 120, 108, 0.18)' },
+  devops: { bg: '#456b86', border: '#8db7cd', glow: 'rgba(69, 107, 134, 0.18)' },
+  testing: { bg: '#287e89', border: '#85d1d0', glow: 'rgba(40, 126, 137, 0.18)' },
   architecture: { bg: '#55786c', border: '#9bc5af', glow: 'rgba(85, 120, 108, 0.18)' },
   tools: { bg: '#456b86', border: '#8db7cd', glow: 'rgba(69, 107, 134, 0.18)' },
   systems: { bg: '#287e89', border: '#85d1d0', glow: 'rgba(40, 126, 137, 0.18)' },

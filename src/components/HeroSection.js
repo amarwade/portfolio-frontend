@@ -16,6 +16,7 @@ function HeroSection({ profile }) {
 
   const showPhoto = Boolean(profile.heroImage) && !photoFailed;
   const initials = useMemo(() => initialsFromName(profile.name), [profile.name]);
+  const nameParts = profile.name.trim().split(/\s+/);
 
   useEffect(() => {
     const timer = setTimeout(() => setIsLoaded(true), 100);
@@ -65,16 +66,22 @@ function HeroSection({ profile }) {
       
       <div className="hero__grid">
         <div className={`hero__content ${isLoaded ? 'loaded' : ''}`}>
-          <div className="hero__badge" style={{ marginBottom: '1rem'}}>
+          <div className="hero__badge">
             <span className="badge-pulse"></span>
             {profile.eyebrow ?? "Portfolio"}
           </div>
-          
+
+          <h1 className="hero__subtitle" id="hero-heading">
+            {nameParts.length > 1 ? (
+              <>
+                {nameParts[0]} <span>{nameParts.slice(1).join(" ")}</span>
+              </>
+            ) : profile.name}
+          </h1>
+
           {profile.heroTagline ? (
             <p className="hero-tagline">{profile.heroTagline}</p>
           ) : null}
-          
-          <h1 className="hero__subtitle">{profile.title}</h1>
           
           <p className="hero__description">{profile.pitch}</p>
           
@@ -91,8 +98,9 @@ function HeroSection({ profile }) {
               </span>
               <div className="button-ripple"></div>
             </button>
-            
           </div>
+
+          <p className="hero__location">{profile.location}</p>
         </div>
 
         <div className={`hero__visual ${isLoaded ? 'loaded' : ''}`}>

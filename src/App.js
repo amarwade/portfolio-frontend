@@ -6,6 +6,7 @@ import CertificationsSection from "./components/CertificationsSection";
 import SkillsSection from "./components/SkillsSection";
 import ProjectsSection from "./components/ProjectsSection";
 import ContactSection from "./components/ContactSection";
+import ContactFooter from "./components/ContactFooter";
 import Navigation from "./components/Navigation";
 import {
   profileData,
@@ -43,6 +44,7 @@ function App() {
           <ProjectsSection />
           <ContactSection />
         </main>
+        <ContactFooter profile={profileData} />
       </div>
     </>
   );

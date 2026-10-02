@@ -28,13 +28,17 @@
 }
 
 :root[data-theme="light"] {
-  --bg-deep: #f4f7f5;
+  --bg-deep: #ffffff;
   --bg-card: rgba(255, 255, 255, 0.96);
   --surface: #ffffff;
-  --surface-soft: #f8fbf9;
+  --surface-soft: #f7faf9;
   --border-glow: rgba(15, 118, 110, 0.18);
   --accent: #0f766e;
   --accent-strong: #0b625b;
+  --accent-hover: #084f49;
+  --accent-soft: #e9f2ed;
+  --accent-border: #c9ddd3;
+  --accent-shadow: 0 10px 26px rgba(15, 118, 110, 0.18);
   --gold: #9a6b24;
   --text: #172a26;
   --text-secondary: #334d45;
@@ -2272,13 +2276,14 @@ h3 {
 }
 
 .project-link.primary {
-  background: linear-gradient(135deg, #4f7cff 0%, #6366f1 100%);
+  background: linear-gradient(135deg, var(--accent), var(--accent-strong));
   color: white;
 }
 
 .project-link.primary:hover {
   transform: translateY(-2px);
-  box-shadow: 0 8px 20px rgba(80, 120, 255, 0.3);
+  background: var(--accent-hover);
+  box-shadow: var(--accent-shadow);
 }
 
 .project-link.secondary {
@@ -2310,7 +2315,7 @@ h3 {
 .project-card__glow {
   position: absolute;
   inset: -2px;
-  background: linear-gradient(45deg, #4f7cff, #6366f1, #7c5cff, #4f7cff);
+  background: linear-gradient(45deg, var(--accent), var(--accent-strong), var(--gold), var(--accent));
   border-radius: 16px;
   opacity: 0;
   transition: opacity 0.4s ease;
@@ -2373,7 +2378,7 @@ h3 {
 .reset-filter {
   margin-top: 1rem;
   padding: 0.75rem 1.5rem;
-  background: linear-gradient(135deg, #4f7cff 0%, #6366f1 100%);
+  background: linear-gradient(135deg, var(--accent), var(--accent-strong));
   color: white;
   border: none;
   border-radius: 8px;
@@ -2385,7 +2390,8 @@ h3 {
 .retry-button:hover,
 .reset-filter:hover {
   transform: translateY(-2px);
-  box-shadow: 0 8px 20px rgba(80, 120, 255, 0.3);
+  background: var(--accent-hover);
+  box-shadow: var(--accent-shadow);
 }
 
 .no-results {
@@ -3426,4 +3432,266 @@ body {
   .hero__grid {
     padding: 1rem;
   }
+}
+
+/* Editorial, centered introduction inspired by the supplied reference. */
+.hero.enhanced {
+  padding-top: 7.5rem;
+  padding-bottom: 4rem;
+  text-align: center;
+}
+
+.hero__grid {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2.5rem;
+}
+
+.hero__content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  max-width: 58rem;
+  padding: 0;
+}
+
+.hero__badge {
+  margin-bottom: 1.25rem;
+  padding: 0.45rem 0.9rem;
+  background: #e9f2ed;
+  border-color: #d2e2d9;
+  color: var(--accent-strong);
+  font-size: 0.78rem;
+  letter-spacing: 0.025em;
+}
+
+.hero__subtitle {
+  margin: 0 0 1rem;
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: clamp(3.25rem, 8vw, 6rem);
+  font-weight: 700;
+  line-height: 0.98;
+  letter-spacing: -0.055em;
+  color: var(--text);
+  opacity: 1;
+}
+
+.hero__subtitle span {
+  position: relative;
+  display: inline-block;
+  z-index: 0;
+  font-style: italic;
+  font-weight: 600;
+}
+
+.hero__subtitle span::after {
+  position: absolute;
+  z-index: -1;
+  content: "";
+  inset: 0.08em -0.13em 0.02em;
+  border: 0.065em solid var(--gold);
+  border-radius: 50%;
+  transform: rotate(-5deg);
+}
+
+.hero__description {
+  max-width: 68ch;
+  margin: 0 auto;
+  color: var(--text-secondary);
+  font-size: clamp(1rem, 1.4vw, 1.125rem);
+  line-height: 1.75;
+}
+
+.hero__actions {
+  justify-content: center;
+  margin: 1.5rem 0 0;
+}
+
+.button.primary.enhanced {
+  border: 1px solid var(--text);
+  border-radius: 999px;
+  padding: 0.3rem 1rem;
+  background: transparent;
+  color: var(--text);
+  box-shadow: none;
+}
+
+.button.primary.enhanced:hover {
+  transform: translateY(-2px);
+  background: var(--text);
+  color: #fff;
+  box-shadow: 0 8px 20px rgba(23, 42, 38, 0.12);
+}
+
+.hero__location {
+  max-width: none;
+  margin: 1rem 0 0;
+  color: var(--text-muted);
+  font-size: 0.8rem;
+  font-weight: 600;
+  letter-spacing: 0.045em;
+}
+
+.hero__visual {
+  width: min(100%, 25rem);
+  margin: 0;
+  align-self: center;
+  transform: none;
+}
+
+.hero-photo-container {
+  width: 100%;
+  margin-inline: auto;
+  padding: 0.6rem;
+  background: #fff;
+  border: 1px solid var(--border-glow);
+  box-shadow: 0 16px 44px rgba(23, 42, 38, 0.1);
+}
+
+.hero-photo {
+  margin-inline: auto;
+  width: 100%;
+  height: auto;
+  aspect-ratio: 3 / 4;
+  border: 0;
+  border-radius: 0.25rem;
+  box-shadow: none;
+}
+
+.hero-photo__img {
+  object-position: center center;
+}
+
+.site-footer {
+  width: 100%;
+  margin: 2rem auto 0;
+  padding: clamp(1.25rem, 3vw, 2rem);
+}
+
+@media (max-width: 968px) {
+  .hero__grid {
+    gap: 2rem;
+  }
+
+  .hero__content {
+    order: initial;
+  }
+
+  .hero__visual {
+    order: initial;
+    margin: 0;
+    transform: none;
+  }
+}
+
+@media (max-width: 640px) {
+  .hero.enhanced {
+    padding-top: 6.5rem;
+    padding-bottom: 2.5rem;
+  }
+
+  .hero__subtitle {
+    font-size: clamp(3rem, 14vw, 4.5rem);
+  }
+
+  .hero__description {
+    line-height: 1.65;
+  }
+
+  .hero__visual {
+    width: min(82vw, 22rem);
+  }
+}
+
+/* Use the same teal and warm-gold accents across identity and actions. */
+.brand-logo {
+  background: linear-gradient(135deg, var(--accent), var(--accent-strong));
+  box-shadow: var(--accent-shadow);
+}
+
+.brand-logo:hover {
+  box-shadow: var(--accent-shadow);
+}
+
+.brand-text {
+  background: none;
+  color: var(--accent-strong);
+  -webkit-text-fill-color: currentColor;
+}
+
+.button.primary,
+.button.primary.enhanced,
+.submit-button,
+.filter-btn.active {
+  border-color: transparent;
+  background: linear-gradient(135deg, var(--accent), var(--accent-strong));
+  color: #fff;
+  box-shadow: var(--accent-shadow);
+}
+
+.button.primary:hover,
+.button.primary.enhanced:hover,
+.submit-button:hover:not(:disabled),
+.filter-btn.active:hover {
+  border-color: transparent;
+  background: var(--accent-hover);
+  color: #fff;
+  box-shadow: var(--accent-shadow);
+}
+
+.button.secondary.enhanced,
+.social-link-contact {
+  border: 1px solid var(--accent-border);
+  background: var(--accent-soft);
+  color: var(--accent-strong);
+  backdrop-filter: none;
+}
+
+.button.secondary.enhanced:hover,
+.social-link-contact:hover {
+  border-color: var(--accent);
+  background: color-mix(in srgb, var(--accent) 12%, white);
+  color: var(--accent-hover);
+}
+
+.contact-info-item svg,
+.contact-info-item a,
+.social-link-contact,
+.languages-label-contact {
+  color: var(--accent-strong);
+}
+
+.nav-link:hover,
+.nav-link.active,
+.mobile-menu-toggle:hover {
+  color: var(--accent-strong);
+  background: var(--accent-soft);
+}
+
+.hamburger span {
+  background: var(--accent-strong);
+}
+
+.hero__subtitle span::after {
+  border-color: var(--gold);
+}
+
+html,
+body {
+  background-color: #ffffff;
+}
+
+.page-atmosphere {
+  display: none;
+}
+
+.section-cv {
+  background: #ffffff;
+}
+
+.navigation,
+.navigation.scrolled {
+  background: rgba(255, 255, 255, 0.96);
 }
