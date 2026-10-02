@@ -3739,6 +3739,27 @@ body {
   background-color: #ffffff;
 }
 
+main > .section + .section {
+  position: relative;
+}
+
+main > .section + .section::before {
+  position: absolute;
+  top: 0;
+  left: 50%;
+  width: min(calc(100% - 3rem), 72rem);
+  height: 1px;
+  background: linear-gradient(
+    90deg,
+    transparent,
+    var(--border-glow) 12%,
+    var(--border-glow) 88%,
+    transparent
+  );
+  content: "";
+  transform: translateX(-50%);
+}
+
 .section-cv .section-heading {
   margin: 0 auto 2.5rem;
   text-align: center;
