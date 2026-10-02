@@ -3678,6 +3678,62 @@ body {
   border-color: var(--gold);
 }
 
+html[data-theme="light"] .site-footer.contact-info-section {
+  border: 1px solid var(--accent-border);
+  background: #fff;
+  box-shadow: 0 0.5rem 1.5rem rgba(23, 42, 38, 0.06);
+}
+
+html[data-theme="light"] .site-footer .contact-info-item {
+  background: var(--accent-soft);
+  color: var(--text-secondary);
+}
+
+html[data-theme="light"] .site-footer .contact-info-item:hover {
+  background: color-mix(in srgb, var(--accent) 12%, white);
+}
+
+html[data-theme="light"] .site-footer .contact-info-icon,
+html[data-theme="light"] .site-footer .contact-info-item a {
+  color: var(--accent-strong);
+}
+
+html[data-theme="light"] .site-footer .contact-info-item a:hover {
+  color: var(--accent-hover);
+}
+
+html[data-theme="light"] .site-footer .contact-languages {
+  background: var(--surface-soft);
+  color: var(--text-secondary);
+}
+
+html[data-theme="light"] .site-footer .languages-label-contact {
+  color: var(--accent-strong);
+}
+
+html[data-theme="light"] .site-footer .languages-text {
+  color: var(--text-secondary);
+}
+
+html[data-theme="light"] .site-footer .social-link-contact {
+  border-color: var(--accent-border);
+  background: var(--accent-soft);
+  color: var(--accent-strong);
+}
+
+html[data-theme="light"] .site-footer .social-link-contact:hover {
+  border-color: var(--accent);
+  background: color-mix(in srgb, var(--accent) 12%, white);
+  color: var(--accent-hover);
+}
+
+.site-footer .contact-info-item a:focus-visible,
+.site-footer .social-link-contact:focus-visible,
+.site-footer .contact-actions .button:focus-visible {
+  outline: 3px solid rgba(15, 118, 110, 0.35);
+  outline-offset: 3px;
+}
+
 html,
 body {
   background-color: #ffffff;
