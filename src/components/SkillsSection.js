@@ -20,12 +20,12 @@ const categoryIcons = {
 
 // Color schemes for each category
 const categoryColors = {
-  languages: { bg: '#7c9cff', border: '#9dbdff', glow: 'rgba(124, 156, 255, 0.25)' },
-  frameworks: { bg: '#6b9fff', border: '#8db5ff', glow: 'rgba(107, 159, 255, 0.3)' },
-  databases: { bg: '#d4af37', border: '#e5ca6c', glow: 'rgba(212, 175, 55, 0.22)' },
-  architecture: { bg: '#8b5cf6', border: '#a78bfa', glow: 'rgba(139, 92, 246, 0.25)' },
-  tools: { bg: '#4f46e5', border: '#6366f1', glow: 'rgba(79, 70, 229, 0.25)' },
-  systems: { bg: '#0ea5e9', border: '#38bdf8', glow: 'rgba(14, 165, 233, 0.3)' },
+  languages: { bg: '#0f766e', border: '#5eead4', glow: 'rgba(15, 118, 110, 0.18)' },
+  frameworks: { bg: '#256d78', border: '#72c6c4', glow: 'rgba(37, 109, 120, 0.18)' },
+  databases: { bg: '#9a6b24', border: '#d6b16a', glow: 'rgba(154, 107, 36, 0.18)' },
+  architecture: { bg: '#55786c', border: '#9bc5af', glow: 'rgba(85, 120, 108, 0.18)' },
+  tools: { bg: '#456b86', border: '#8db7cd', glow: 'rgba(69, 107, 134, 0.18)' },
+  systems: { bg: '#287e89', border: '#85d1d0', glow: 'rgba(40, 126, 137, 0.18)' },
 };
 
 function SkillsSection({ categories }) {

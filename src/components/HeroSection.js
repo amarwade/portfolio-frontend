@@ -74,7 +74,7 @@ function HeroSection({ profile }) {
             <p className="hero-tagline">{profile.heroTagline}</p>
           ) : null}
           
-          <h2 className="hero__subtitle">{profile.title}</h2>
+          <h1 className="hero__subtitle">{profile.title}</h1>
           
           <p className="hero__description">{profile.pitch}</p>
           

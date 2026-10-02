@@ -1,4 +1,3 @@
-import { useEffect, useState } from "react";
 import { useScrollReveal } from "./hooks/useScrollReveal";
 import HeroSection from "./components/HeroSection";
 import ExperienceSection from "./components/ExperienceSection";
@@ -18,30 +17,6 @@ import {
 
 function App() {
   useScrollReveal();
-  const [theme, setTheme] = useState("dark");
-
-  useEffect(() => {
-    document.documentElement.style.scrollBehavior = "smooth";
-  }, []);
-
-  useEffect(() => {
-    const savedTheme = localStorage.getItem("theme");
-    if (savedTheme === "light" || savedTheme === "dark") {
-      setTheme(savedTheme);
-      return;
-    }
-
-    const supportsMatchMedia = typeof window.matchMedia === "function";
-    const prefersDark = supportsMatchMedia
-      ? window.matchMedia("(prefers-color-scheme: dark)").matches
-      : true;
-    setTheme(prefersDark ? "dark" : "light");
-  }, []);
-
-  useEffect(() => {
-    document.documentElement.setAttribute("data-theme", theme);
-    localStorage.setItem("theme", theme);
-  }, [theme]);
 
   return (
     <>
