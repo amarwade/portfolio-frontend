@@ -55,8 +55,13 @@ function ProjectsSection() {
   return (
     <section id="projects" className="section section-cv reveal-on-scroll projects-enhanced">
       <div className="projects-header">
-        <h2 className="cv-section-title">Mes Projets</h2>
-        <p className="projects-subtitle">Découvrez mes réalisations et mes compétences techniques</p>
+        <div className="projects-heading">
+          <p className="projects-eyebrow">Réalisations sélectionnées</p>
+          <h2 className="cv-section-title">Projets</h2>
+        </div>
+        <p className="projects-subtitle">
+          Des applications conçues pour répondre à des besoins concrets, du développement web full stack aux projets logiciels.
+        </p>
       </div>
 
       {status === "loading" && (
@@ -85,10 +90,11 @@ function ProjectsSection() {
 
       {status === "success" && projects.length > 0 && (
         <>
-          <div className="projects-filter">
+          <div className="projects-filter" role="group" aria-label="Filtrer les projets par technologie">
             <button 
               className={`filter-btn ${filter === "all" ? "active" : ""}`}
               onClick={() => setFilter("all")}
+              aria-pressed={filter === "all"}
             >
               Tous
             </button>
@@ -97,6 +103,7 @@ function ProjectsSection() {
                 key={tech}
                 className={`filter-btn ${filter === tech.toLowerCase() ? "active" : ""}`}
                 onClick={() => setFilter(tech.toLowerCase())}
+                aria-pressed={filter === tech.toLowerCase()}
               >
                 {tech}
               </button>
