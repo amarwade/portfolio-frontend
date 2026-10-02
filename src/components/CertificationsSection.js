@@ -1,7 +1,9 @@
+import SectionHeading from "./SectionHeading";
+
 function CertificationsSection({ items }) {
   return (
     <section id="certifications" className="section section-cv reveal-on-scroll">
-      <h2 className="cv-section-title">Certifications</h2>
+      <SectionHeading eyebrow="Apprentissage continu" title="Certifications" />
       <ul className="cert-list">
         {items.map((entry) => (
           <li

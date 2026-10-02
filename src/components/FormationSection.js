@@ -1,9 +1,10 @@
 import { IconGraduationCap } from './Icons';
+import SectionHeading from "./SectionHeading";
 
 function FormationSection({ items }) {
   return (
     <section id="formation" className="section section-cv reveal-on-scroll">
-      <h2 className="cv-section-title">Formation</h2>
+      <SectionHeading eyebrow="Parcours académique" title="Formation" />
       <div className="formation-timeline">
         {items.map((entry, index) => (
           <div key={entry.id} className="formation-item" style={{ animationDelay: `${index * 0.15}s` }}>

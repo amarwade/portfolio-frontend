@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import { getProjects } from "../services/projectService";
 import ProjectCard from "./ProjectCard";
 import { IconFolder, IconAlertTriangle } from './Icons';
+import SectionHeading from "./SectionHeading";
 
 function ProjectsSection() {
   const [projects, setProjects] = useState([]);
@@ -54,15 +55,12 @@ function ProjectsSection() {
 
   return (
     <section id="projects" className="section section-cv reveal-on-scroll projects-enhanced">
-      <div className="projects-header">
-        <div className="projects-heading">
-          <p className="projects-eyebrow">Réalisations sélectionnées</p>
-          <h2 className="cv-section-title">Projets</h2>
-        </div>
-        <p className="projects-subtitle">
-          Des applications conçues pour répondre à des besoins concrets, du développement web full stack aux projets logiciels.
-        </p>
-      </div>
+      <SectionHeading
+        eyebrow="Réalisations sélectionnées"
+        title="Projets"
+        description="Des applications conçues pour répondre à des besoins concrets, du développement web full stack aux projets logiciels."
+        className="projects-header"
+      />
 
       {status === "loading" && (
         <div className="loading-state">

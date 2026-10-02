@@ -11,6 +11,7 @@
 
 import { useState } from "react";
 import { sendContactMessage } from "../services/contactService";
+import SectionHeading from "./SectionHeading";
 
 // Initial state for form fields (all empty)
 const initialFormState = {
@@ -178,8 +179,12 @@ function ContactSection() {
 
   return (
     <section id="contact" className="section section-cv reveal-on-scroll">
-      <h2 className="cv-section-title">Contact</h2>
-      <p>Si vous souhaitez échanger davantage sur mon profil ou discuter d'une opportunité, je vous invite à me contacter.</p>
+      <SectionHeading
+        eyebrow="Parlons de votre projet"
+        title="Contact"
+        description="Si vous souhaitez échanger davantage sur mon profil ou discuter d’une opportunité, je vous invite à me contacter."
+        className="contact-heading"
+      />
 
       <form id="contact-form" className="contact-form enhanced" onSubmit={onSubmit}>
         <div className="form-group">

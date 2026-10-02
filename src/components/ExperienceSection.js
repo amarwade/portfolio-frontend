@@ -1,9 +1,13 @@
 import { IconBuilding } from './Icons';
+import SectionHeading from "./SectionHeading";
 
 function ExperienceSection({ items }) {
   return (
     <section id="experience" className="section section-cv reveal-on-scroll">
-      <h2 className="cv-section-title">Expériences & projets</h2>
+      <SectionHeading
+        eyebrow="Mon parcours"
+        title="Expériences"
+      />
       <div className="experience-grid">
         {items.map((entry, index) => (
           <div key={entry.id} className="experience-card" style={{ animationDelay: `${index * 0.1}s` }}>

@@ -6,6 +6,7 @@ import {
   IconLaptop,
   IconTool
 } from './Icons';
+import SectionHeading from "./SectionHeading";
 
 // Map category IDs to icons
 const categoryIcons = {
@@ -35,8 +36,12 @@ const categoryColors = {
 function SkillsSection({ categories }) {
   return (
     <section id="skills" className="section section-cv reveal-on-scroll">
-      <h2 className="cv-section-title">Compétences techniques</h2>
-      <p className="skills-subtitle">Technologies et outils que j'utilise au quotidien</p>
+      <SectionHeading
+        eyebrow="Mon expertise"
+        title="Compétences techniques"
+        description="Technologies et outils que j’utilise au quotidien"
+        className="skills-heading"
+      />
       
       <div className="skills-grid-modern">
         {categories.map((category, index) => {

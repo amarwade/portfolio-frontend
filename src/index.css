@@ -3535,7 +3535,7 @@ body {
 }
 
 .hero__visual {
-  width: min(100%, 25rem);
+  width: min(100%, 21rem);
   margin: 0;
   align-self: center;
   transform: none;
@@ -3601,7 +3601,7 @@ body {
   }
 
   .hero__visual {
-    width: min(82vw, 22rem);
+    width: min(74vw, 19rem);
   }
 }
 
@@ -3737,6 +3737,74 @@ html[data-theme="light"] .site-footer .social-link-contact:hover {
 html,
 body {
   background-color: #ffffff;
+}
+
+.section-cv .section-heading {
+  margin: 0 auto 2.5rem;
+  text-align: center;
+}
+
+.section-cv .section-eyebrow {
+  margin: 0 0 0.65rem;
+  color: var(--accent-strong);
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  line-height: 1.4;
+  text-align: center;
+  text-transform: uppercase;
+}
+
+.section-cv .section-heading .cv-section-title {
+  position: relative;
+  display: table;
+  margin: 0 auto;
+  padding: 0 0 0.6rem;
+  border: 0;
+  box-shadow: none;
+  color: var(--text);
+  font-size: var(--fs-h2);
+  font-weight: 700;
+  letter-spacing: var(--tracking-heading);
+  line-height: 1.2;
+  text-align: center;
+  text-transform: none;
+}
+
+.section-cv .section-heading .cv-section-title::after {
+  position: absolute;
+  right: 50%;
+  bottom: 0;
+  width: 3rem;
+  height: 0.18rem;
+  border-radius: 999px;
+  background: linear-gradient(90deg, var(--accent-strong), var(--gold));
+  content: "";
+  transform: translateX(50%);
+}
+
+.section-cv .section-heading__description {
+  max-width: 62ch;
+  margin: 0.85rem auto 0;
+  color: var(--text-secondary);
+  font-size: 1rem;
+  line-height: 1.65;
+  text-align: center;
+}
+
+.section-cv .projects-header {
+  max-width: none;
+  margin-bottom: 2rem;
+}
+
+.section-cv .skills-heading,
+.section-cv .contact-heading {
+  max-width: 47rem;
+}
+
+.section-cv .skills-heading .section-heading__description,
+.section-cv .contact-heading .section-heading__description {
+  margin-top: 0.85rem;
 }
 
 .section.projects-enhanced {
