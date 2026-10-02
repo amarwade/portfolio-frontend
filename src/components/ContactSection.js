@@ -188,61 +188,87 @@ function ContactSection() {
 
       <form id="contact-form" className="contact-form enhanced" onSubmit={onSubmit}>
         <div className="form-group">
+          <label className="field-label" htmlFor="contact-name">
+            Nom complet <span aria-hidden="true">*</span>
+          </label>
           <input
+            id="contact-name"
             required
             name="name"
-            placeholder="Nom complet"
+            autoComplete="name"
+            placeholder="Ex. Amar Wade"
             value={formData.name}
             onChange={onChange}
             onBlur={onBlur}
             className={`form-input ${touched.name && errors.name ? 'error' : ''} ${touched.name && !errors.name && formData.name ? 'success' : ''}`}
+            aria-invalid={Boolean(touched.name && errors.name)}
+            aria-describedby={touched.name && errors.name ? "contact-name-error" : undefined}
           />
-          {touched.name && errors.name && <span className="error-message">{errors.name}</span>}
-          {touched.name && !errors.name && formData.name && <span className="success-icon">✓</span>}
+          {touched.name && errors.name && <span id="contact-name-error" className="error-message">{errors.name}</span>}
+          {touched.name && !errors.name && formData.name && <span className="success-icon" aria-hidden="true">✓</span>}
         </div>
 
         <div className="form-group">
+          <label className="field-label" htmlFor="contact-email">
+            Adresse e-mail <span aria-hidden="true">*</span>
+          </label>
           <input
+            id="contact-email"
             required
             type="email"
             name="email"
-            placeholder="Adresse email"
+            autoComplete="email"
+            placeholder="vous@exemple.fr"
             value={formData.email}
             onChange={onChange}
             onBlur={onBlur}
             className={`form-input ${touched.email && errors.email ? 'error' : ''} ${touched.email && !errors.email && formData.email ? 'success' : ''}`}
+            aria-invalid={Boolean(touched.email && errors.email)}
+            aria-describedby={touched.email && errors.email ? "contact-email-error" : undefined}
           />
-          {touched.email && errors.email && <span className="error-message">{errors.email}</span>}
-          {touched.email && !errors.email && formData.email && <span className="success-icon">✓</span>}
+          {touched.email && errors.email && <span id="contact-email-error" className="error-message">{errors.email}</span>}
+          {touched.email && !errors.email && formData.email && <span className="success-icon" aria-hidden="true">✓</span>}
         </div>
 
-        <div className="form-group">
+        <div className="form-group form-group--full">
+          <label className="field-label" htmlFor="contact-subject">
+            Sujet <span aria-hidden="true">*</span>
+          </label>
           <input
+            id="contact-subject"
             required
             name="subject"
-            placeholder="Sujet du message"
+            placeholder="Objet de votre message"
             value={formData.subject}
             onChange={onChange}
             onBlur={onBlur}
             className={`form-input ${touched.subject && errors.subject ? 'error' : ''} ${touched.subject && !errors.subject && formData.subject ? 'success' : ''}`}
+            aria-invalid={Boolean(touched.subject && errors.subject)}
+            aria-describedby={touched.subject && errors.subject ? "contact-subject-error" : undefined}
           />
-          {touched.subject && errors.subject && <span className="error-message">{errors.subject}</span>}
-          {touched.subject && !errors.subject && formData.subject && <span className="success-icon">✓</span>}
+          {touched.subject && errors.subject && <span id="contact-subject-error" className="error-message">{errors.subject}</span>}
+          {touched.subject && !errors.subject && formData.subject && <span className="success-icon" aria-hidden="true">✓</span>}
         </div>
 
-        <div className="form-group">
+        <div className="form-group form-group--full">
+          <label className="field-label" htmlFor="contact-message">
+            Message <span aria-hidden="true">*</span>
+          </label>
           <textarea
+            id="contact-message"
             required
             name="message"
-            placeholder="Votre message..."
+            placeholder="Décrivez votre demande ou votre proposition…"
             rows={5}
             value={formData.message}
             onChange={onChange}
             onBlur={onBlur}
             className={`form-input ${touched.message && errors.message ? 'error' : ''} ${touched.message && !errors.message && formData.message ? 'success' : ''}`}
+            aria-invalid={Boolean(touched.message && errors.message)}
+            aria-describedby={touched.message && errors.message ? "contact-message-error" : undefined}
           />
-          {touched.message && errors.message && <span className="error-message">{errors.message}</span>}
-          {touched.message && !errors.message && formData.message && <span className="success-icon">✓</span>}
+          {touched.message && errors.message && <span id="contact-message-error" className="error-message">{errors.message}</span>}
+          {touched.message && !errors.message && formData.message && <span className="success-icon" aria-hidden="true">✓</span>}
         </div>
 
         <button 
@@ -263,7 +289,7 @@ function ContactSection() {
 
       {/* Success message displayed after form submission succeeds */}
       {status === "success" && (
-        <div className="form-status success">
+        <div className="form-status success" role="status" aria-live="polite">
           <span className="status-icon">✓</span>
           <p>Message envoyé avec succès ! Je vous répondrai dans les plus brefs délais.</p>
         </div>
@@ -271,7 +297,7 @@ function ContactSection() {
 
       {/* Error message displayed if form submission fails */}
       {status === "error" && (
-        <div className="form-status error">
+        <div className="form-status error" role="alert">
           <span className="status-icon">✗</span>
           <p>Une erreur est survenue lors de l'envoi. Veuillez réessayer plus tard.</p>
         </div>
