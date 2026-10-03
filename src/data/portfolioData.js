@@ -7,7 +7,7 @@ export const profileData = {
   heroTagline: "Backend Java/Spring Boot · Frontend React, Angular & TypeScript",
   heroImage: "/photo-profil.png",
   heroImageAlt: "Amar WADE — développeur Java et applications web",
-  location: "62100 Calais",
+  location: "", 
   email: "amarwade927@gmail.com",
   phone: "+33 7 45 65 12 33",
   github: "https://github.com/amarwade",

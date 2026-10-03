@@ -100,7 +100,6 @@ function HeroSection({ profile }) {
             </button>
           </div>
 
-          <p className="hero__location">{profile.location}</p>
         </div>
 
         <div className={`hero__visual ${isLoaded ? 'loaded' : ''}`}>
@@ -140,6 +139,9 @@ function HeroSection({ profile }) {
               )}
             </figure>
           </div>
+          <p className="hero-photo-caption">
+            Je transforme des idées en solutions web utiles, solides et inspirantes.
+          </p>
         </div>
       </div>
     </section>
