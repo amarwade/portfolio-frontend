@@ -12,13 +12,13 @@ jest.mock("./services/contactService", () => ({
 test("renders portfolio sections", async () => {
   render(<App />);
   expect(screen.getByRole("heading", { level: 1, name: /Amar WADE/i })).toBeInTheDocument();
-  expect(screen.getByRole("heading", { name: /^Formation$/i })).toBeInTheDocument();
+  expect(screen.getByRole("heading", { name: /^Formations$/i })).toBeInTheDocument();
   expect(screen.getByRole("heading", { name: /Certifications/i })).toBeInTheDocument();
-  expect(screen.getByRole("heading", { name: /Expérience professionnelle/i })).toBeInTheDocument();
+  expect(screen.getByRole("heading", { name: /Expériences/i })).toBeInTheDocument();
   expect(screen.getByRole("heading", { name: /Compétences/i })).toBeInTheDocument();
   expect(
     screen.getByRole("heading", { level: 3, name: /Langages de programmation/i })
   ).toBeInTheDocument();
   expect(screen.getByRole("heading", { name: /Projets/i })).toBeInTheDocument();
-  expect(screen.getByRole("heading", { name: /Contact/i })).toBeInTheDocument();
+  expect(screen.getByRole("heading", { name: /Contacts/i })).toBeInTheDocument();
 });

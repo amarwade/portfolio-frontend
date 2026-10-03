@@ -43,6 +43,7 @@ function SkillsSection({ categories }) {
         className="skills-heading"
       />
       
+      <h3 className="skills-subtitle">Langages de programmation</h3>
       <div className="skills-grid-modern">
         {categories.map((category, index) => {
           const IconComponent = categoryIcons[category.id] || IconSettings;

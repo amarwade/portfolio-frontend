@@ -4,7 +4,7 @@ import SectionHeading from "./SectionHeading";
 function FormationSection({ items }) {
   return (
     <section id="formation" className="section section-cv reveal-on-scroll">
-      <SectionHeading eyebrow="Parcours académique" title="Formation" />
+      <SectionHeading eyebrow="Parcours académique" title="Formations" />
       <div className="formation-timeline">
         {items.map((entry, index) => (
           <div key={entry.id} className="formation-item" style={{ animationDelay: `${index * 0.15}s` }}>

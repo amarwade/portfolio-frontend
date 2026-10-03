@@ -13,7 +13,7 @@ function ProjectCard({ project, index }) {
           <IconLaptop size={24} />
         </div>
         <span className="project-number">
-          Projet {String(index + 1).padStart(2, '0')}
+          Projets {String(index + 1).padStart(2, '0')}
         </span>
       </div>
 

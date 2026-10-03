@@ -33,10 +33,10 @@ function Navigation() {
 
   const navItems = [
     { id: 'about', label: 'Accueil', Icon: Icons.Home },
-    { id: 'experience', label: 'Expérience', Icon: Icons.TrendingUp },
-    { id: 'formation', label: 'Formation', Icon: Icons.GraduationCap },
+    { id: 'experience', label: 'Expériences', Icon: Icons.TrendingUp },
+    { id: 'formation', label: 'Formations', Icon: Icons.GraduationCap },
     { id: 'projects', label: 'Projets', Icon: Icons.Briefcase },
-    { id: 'contact', label: 'Contact', Icon: Icons.Mail }
+    { id: 'contact', label: 'Contacts', Icon: Icons.Mail }
   ];
 
   return (

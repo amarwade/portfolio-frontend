@@ -181,7 +181,7 @@ function ContactSection() {
     <section id="contact" className="section section-cv reveal-on-scroll">
       <SectionHeading
         eyebrow="Parlons de votre projet"
-        title="Contact"
+        title="Contacts"
         description="Si vous souhaitez échanger davantage sur mon profil ou discuter d’une opportunité, je vous invite à me contacter."
         className="contact-heading"
       />
