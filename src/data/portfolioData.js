@@ -1,17 +1,17 @@
 export const profileData = {
   name: "Amar WADE",
-  title: "Élève ingénieur en informatique — Développeur Full Stack",
-  eyebrow: "Recherche de stage de 2 mois ou plus · Cycle ingénieur 2ᵉ année",
+  title: "Élève-ingénieur en informatique — Stage assistant ingénieur",
+  eyebrow: "Recherche d’un stage assistant ingénieur de 8 semaines · juin–août 2027",
   pitch:
-    "Élève ingénieur en informatique en 2ᵉ année à l’EILCO (Calais), je développe des applications web full stack, du backend Java/Spring Boot au frontend Angular, React et TypeScript. Je m’intéresse aussi à la sécurité applicative (OAuth2, Keycloak) et aux pratiques DevOps (Docker, CI/CD). Après une première expérience chez InTouch Group et plusieurs projets menés en équipe et en autonomie, je recherche un stage d’au moins deux mois en développement applicatif. Rigoureux et autodidacte, j’aime apprendre et résoudre des problèmes concrets.",
-  heroTagline: "Backend Java/Spring Boot · Frontend React, Angular & TypeScript",
+    "Élève-ingénieur en informatique en 2ᵉ année à l’EILCO, je recherche un stage d’assistant ingénieur de 8 semaines entre début juin et fin août 2027. Je conçois des applications web sécurisées en Java et Spring Boot, du backend au déploiement cloud avec Docker et CI/CD. J’ai déjà travaillé en entreprise dans une équipe Agile Scrum et mène des projets concrets en équipe et en autonomie.",
+  heroTagline: "Java & Spring Boot · Applications web sécurisées · Cloud & CI/CD",
   heroImage: "/photo-profil.png",
   heroImageAlt: "Amar WADE — développeur Java et applications web",
-  location: "", 
+  location: "Calais, France",
   email: "amarwade927@gmail.com",
   phone: "+33 7 45 65 12 33",
   github: "https://github.com/amarwade",
-  linkedin: "https://www.linkedin.com/in/amar-wade",
+  linkedin: "https://www.linkedin.com/in/amar-wade-dev",
   cvUrl: "cv-amar-wade.pdf",
   languagesLine: "Français · Anglais · Wolof",
   drivingLicense: "Permis B",
@@ -19,17 +19,10 @@ export const profileData = {
 
 export const formationData = [
   {
-    id: "eilco-second-year",
-    period: "2026 – 2027",
-    title: "2ᵉ année du cycle ingénieur en informatique",
-    institution: "EILCO — Calais",
-    detail: "En cours",
-  },
-  {
-    id: "eilco-first-year",
-    period: "2025 – 2026",
-    title: "1ʳᵉ année du cycle ingénieur en informatique",
-    institution: "EILCO — Calais",
+    id: "eilco-engineering-cycle",
+    period: "2025 – 2027",
+    title: "Cycle ingénieur en informatique (2ᵉ année en cours)",
+    institution: "EILCO — École d’Ingénieurs du Littoral Côte d’Opale, Calais",
   },
   {
     id: "dut",
@@ -49,6 +42,12 @@ export const formationData = [
 
 export const certificationData = [
   {
+    id: "machine-learning-az",
+    name: "Machine Learning A-Z — ML, DL, AI with AWS, Python & R",
+    provider: "Udemy",
+    date: "en cours",
+  },
+  {
     id: "cyber-unodc",
     name: "Cybercriminalité",
     provider: "UNODC — Nations Unies",
@@ -58,7 +57,6 @@ export const certificationData = [
     id: "java-udemy",
     name: "Java Masterclass",
     provider: "Udemy",
-    date: "en cours",
   },
   {
     id: "huawei-dcnt",
@@ -71,15 +69,14 @@ export const certificationData = [
 export const experienceData = [
   {
     id: "intouch",
-    period: "2025 · Stage de 2 mois",
+    period: "Juin – juillet 2025 · Stage de 2 mois",
     title: "Développeur d’application web",
     organization: "InTouch Group — Sénégal",
     highlights: [
-      "Analyse des besoins métiers et conception d’une application web sécurisée avec Spring Boot et Vaadin",
-      "Mise en place de l’authentification OAuth2 avec Spring Security et Keycloak",
-      "Conception de la base MySQL, optimisation SQL et développement d’API REST testées avec Postman",
-      "Travail en méthode Agile (Scrum), gestion du code avec Git/GitHub et des dépendances avec Maven",
-      "Analyse et correction d’anomalies pendant les phases de test et de validation",
+      "Analyse des besoins des équipes métiers et développement d’une application web sécurisée avec Spring Boot et Vaadin",
+      "Mise en place de l’authentification et de la gestion des accès avec Spring Security et Keycloak (OAuth2)",
+      "Conception de la base MySQL, optimisation des requêtes SQL et développement et test d’API REST avec Postman",
+      "Travail en Agile Scrum avec Git/GitHub et Maven ; correction des anomalies relevées lors des tests",
     ],
   },
   {
@@ -88,10 +85,9 @@ export const experienceData = [
     title: "Responsable terrain — Projet solidaire",
     organization: "FACE Côte d’Opale — Calais",
     highlights: [
-      "Projet mené en équipe de trois pour faire connaître les programmes « Tissons du lien » et « Sénior Move » auprès des seniors isolés du Calaisis",
-      "Préparation et pilotage de deux sorties de terrain : distribution de flyers, collecte de questionnaires et échanges avec des seniors",
-      "Réalisation d’un cahier des charges, de supports de communication et d’un plan d’action de quatre phases remis à l’association",
-      "Organisation du projet avec TeamGantt, réunions Google Meet et comptes rendus réguliers au tuteur",
+      "Pilotage, en groupe de trois étudiants, d’une action de sensibilisation aux programmes « Tissons du lien » et « Sénior Move » auprès des seniors isolés du Calaisis",
+      "Organisation de deux sorties terrain : distribution de flyers, questionnaires et échanges avec plusieurs dizaines de seniors",
+      "Livraison d’un cahier des charges, d’un plan d’action en quatre phases et 23 actions, d’un planning TeamGantt et de comptes rendus au tuteur",
     ],
   },
   {
@@ -120,7 +116,7 @@ export const skillsByCategory = [
       "PHP",
       "API REST",
       "OpenAPI / Swagger",
-      "Python (bases)",
+      "Python",
     ],
   },
   {
@@ -130,10 +126,10 @@ export const skillsByCategory = [
       "JavaScript",
       "TypeScript",
       "HTML / CSS",
-      "Angular",
       "React",
       "Vaadin Flow",
       "Tailwind CSS",
+      "Angular (bases)",
     ],
   },
   {
@@ -152,7 +148,7 @@ export const skillsByCategory = [
   {
     id: "security",
     title: "Sécurité",
-    items: ["OAuth2 / Keycloak", "JWT", "OWASP Top 10", "CORS / CSRF"],
+    items: ["OAuth2 / Keycloak", "JWT", "OWASP Top 10"],
   },
   {
     id: "devops",
@@ -182,9 +178,7 @@ export const skillsByCategory = [
       "SOLID",
       "Design patterns",
       "Clean Architecture",
-      "Microservices (notions)",
       "UML",
-      "Merise",
     ],
   },
   {
@@ -198,13 +192,12 @@ export const skillsByCategory = [
       "IntelliJ",
       "VS Code",
       "Jira",
-      "Figma (notions)",
       "Agile / Scrum",
     ],
   },
   {
     id: "systems",
     title: "Systèmes & réseaux",
-    items: ["Linux (Ubuntu)", "Bash", "SSH", "Nginx", "Windows", "Réseaux (bases)"],
+    items: ["Linux (Ubuntu)", "Bash", "SSH", "Nginx"],
   },
 ];

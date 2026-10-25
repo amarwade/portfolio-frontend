@@ -21,4 +21,11 @@ test("renders portfolio sections", async () => {
   ).toBeInTheDocument();
   expect(screen.getByRole("heading", { name: /Projets/i })).toBeInTheDocument();
   expect(screen.getByRole("heading", { name: /Contacts/i })).toBeInTheDocument();
+  expect(screen.getByText(/stage assistant ingénieur de 8 semaines/i)).toBeInTheDocument();
+  expect(screen.getByText(/Juin – juillet 2025/)).toBeInTheDocument();
+  expect(screen.getByText(/Machine Learning A-Z/)).toBeInTheDocument();
+  expect(screen.getByRole("link", { name: /LinkedIn/i })).toHaveAttribute(
+    "href",
+    "https://www.linkedin.com/in/amar-wade-dev"
+  );
 });
