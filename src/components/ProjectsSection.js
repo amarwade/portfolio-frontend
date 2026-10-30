@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { useCallback, useEffect, useState } from "react";
 import { getProjects } from "../services/projectService";
 import ProjectCard from "./ProjectCard";
 import { IconFolder, IconAlertTriangle } from './Icons';
@@ -9,19 +9,21 @@ function ProjectsSection() {
   const [status, setStatus] = useState("loading");
   const [filter, setFilter] = useState("all");
 
-  useEffect(() => {
-    const loadProjects = async () => {
-      try {
-        const response = await getProjects();
-        setProjects(response.data);
-        setStatus("success");
-      } catch (error) {
-        setStatus("error");
-      }
-    };
+  const loadProjects = useCallback(async () => {
+    setStatus("loading");
 
-    loadProjects();
+    try {
+      const response = await getProjects();
+      setProjects(response.data);
+      setStatus("success");
+    } catch (error) {
+      setStatus("error");
+    }
   }, []);
+
+  useEffect(() => {
+    loadProjects();
+  }, [loadProjects]);
 
   const filteredProjects = projects.filter(project => {
     if (filter === "all") return true;
@@ -63,17 +65,17 @@ function ProjectsSection() {
       />
 
       {status === "loading" && (
-        <div className="loading-state">
+        <div className="loading-state" role="status" aria-live="polite">
           <div className="loading-spinner"></div>
           <p>Chargement des projets...</p>
         </div>
       )}
       
       {status === "error" && (
-        <div className="error-state">
+        <div className="error-state" role="alert">
           <div className="error-icon"><IconAlertTriangle size={48} /></div>
           <p>Impossible de récupérer les projets pour le moment.</p>
-          <button onClick={() => window.location.reload()} className="retry-button">
+          <button type="button" onClick={loadProjects} className="retry-button">
             Réessayer
           </button>
         </div>

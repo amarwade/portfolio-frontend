@@ -23,6 +23,17 @@ function Navigation() {
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
+  useEffect(() => {
+    const handleKeyDown = (event) => {
+      if (event.key === 'Escape' && isMobileMenuOpen) {
+        setIsMobileMenuOpen(false);
+      }
+    };
+
+    window.addEventListener('keydown', handleKeyDown);
+    return () => window.removeEventListener('keydown', handleKeyDown);
+  }, [isMobileMenuOpen]);
+
   const scrollToSection = (sectionId) => {
     const element = document.getElementById(sectionId);
     if (element) {
@@ -36,7 +47,7 @@ function Navigation() {
     { id: 'experience', label: 'Expériences', Icon: Icons.TrendingUp },
     { id: 'formation', label: 'Formations', Icon: Icons.GraduationCap },
     { id: 'projects', label: 'Projets', Icon: Icons.Briefcase },
-    { id: 'contact', label: 'Contacts', Icon: Icons.Mail }
+    { id: 'contact', label: 'Contacts', Icon: Icons.Mail },
   ];
 
   return (
@@ -53,8 +64,10 @@ function Navigation() {
               {navItems.map((item) => (
                 <li key={item.id} className="nav-item">
                   <button
+                    type="button"
                     className="nav-link"
                     onClick={() => scrollToSection(item.id)}
+                    aria-label={`Aller à la section ${item.label}`}
                   >
                     <span className="nav-icon"><item.Icon /></span>
                     <span className="nav-label">{item.label}</span>
@@ -66,6 +79,7 @@ function Navigation() {
 
           <div className="nav-actions">
             <button
+              type="button"
               className="mobile-menu-toggle"
               onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
               aria-label={isMobileMenuOpen ? 'Fermer le menu' : 'Ouvrir le menu'}

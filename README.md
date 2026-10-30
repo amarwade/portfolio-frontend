@@ -41,10 +41,15 @@ npm install
 
 ## Configuration
 
-Par défaut, l’application utilise l’API de production. Pour utiliser une autre API, créez un fichier `.env` à la racine du projet :
+Par défaut, l’application utilise l’API de production. Pour utiliser une autre API, créez un fichier `.env` à la racine du projet à partir de `.env.example` :
+
+```bash
+cp .env.example .env
+```
 
 ```env
 REACT_APP_API_BASE_URL=http://localhost:8080/api
+REACT_APP_API_TIMEOUT_MS=15000
 ```
 
 Redémarrez le serveur de développement après toute modification de `.env`.

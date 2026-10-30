@@ -220,8 +220,8 @@
   }
 }
 
-main {
-  scroll-margin-top: 5rem;
+main > .section {
+  scroll-margin-top: 7rem;
 }
 
 @media (max-width: 768px) {
@@ -289,8 +289,8 @@ main {
     background: var(--accent-soft);
   }
 
-  main {
-    scroll-margin-top: 4.5rem;
+  main > .section {
+    scroll-margin-top: 6rem;
   }
 }
 

@@ -9,7 +9,7 @@
  * - Contact information display (location, email, phone, social links)
  */
 
-import { useState } from "react";
+import { useState, useEffect, useRef } from "react";
 import { sendContactMessage } from "../services/contactService";
 import SectionHeading from "./SectionHeading";
 
@@ -42,6 +42,12 @@ function ContactSection() {
 
   // Form submission status: 'idle' | 'loading' | 'success' | 'error'
   const [status, setStatus] = useState("idle");
+  const timeoutIdsRef = useRef([]);
+
+  useEffect(() => () => {
+    timeoutIdsRef.current.forEach((timeoutId) => clearTimeout(timeoutId));
+    timeoutIdsRef.current = [];
+  }, []);
 
   /**
    * Validates a single form field based on its name and value
@@ -169,11 +175,13 @@ function ContactSection() {
       setStatus("success");
 
       // Reset status after 5 seconds
-      setTimeout(() => setStatus("idle"), 5000);
+      const successTimeoutId = setTimeout(() => setStatus("idle"), 5000);
+      timeoutIdsRef.current.push(successTimeoutId);
     } catch (error) {
       // Show error state if submission fails
       setStatus("error");
-      setTimeout(() => setStatus("idle"), 5000);
+      const errorTimeoutId = setTimeout(() => setStatus("idle"), 5000);
+      timeoutIdsRef.current.push(errorTimeoutId);
     }
   };
 

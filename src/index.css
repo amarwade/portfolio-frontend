@@ -1,53 +1,7 @@
-:root {
-  --bg-deep: #0c1514;
-  --bg-card: rgba(18, 32, 29, 0.9);
-  --surface: rgba(19, 35, 32, 0.94);
-  --surface-soft: rgba(24, 43, 39, 0.84);
-  --border-glow: rgba(94, 234, 212, 0.2);
-  --accent: #5eead4;
-  --accent-strong: #2dd4bf;
-  --gold: #d6b16a;
-  --text: #edf5f1;
-  --text-secondary: #c1d1ca;
-  --text-muted: #9aafa7;
-  --radius-lg: 18px;
-  --shadow-glow: 0 0 40px rgba(45, 212, 191, 0.14);
-  --font-heading: "Space Grotesk", "Segoe UI", system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
-  --font-body: "Inter", "Segoe UI", system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
-  --font-mono: "JetBrains Mono", "SFMono-Regular", Consolas, "Liberation Mono", monospace;
-  --fs-h1: clamp(2.25rem, 5vw, 3.5rem);
-  --fs-h2: clamp(1.75rem, 3.5vw, 2.25rem);
-  --fs-h3: clamp(1.25rem, 2.5vw, 1.5rem);
-  --fs-body: 1rem;
-  --fs-small: 0.875rem;
-  --lh-heading: 1.2;
-  --lh-body: 1.6;
-  --tracking-heading: -0.02em;
-  --tracking-body: 0;
-  --content-max-width: 65ch;
-}
-
-:root[data-theme="light"] {
-  --bg-deep: #ffffff;
-  --bg-card: rgba(255, 255, 255, 0.96);
-  --surface: #ffffff;
-  --surface-soft: #f7faf9;
-  --border-glow: rgba(15, 118, 110, 0.18);
-  --accent: #0f766e;
-  --accent-strong: #0b625b;
-  --accent-hover: #084f49;
-  --accent-soft: #e9f2ed;
-  --accent-border: #c9ddd3;
-  --accent-shadow: 0 10px 26px rgba(15, 118, 110, 0.18);
-  --gold: #9a6b24;
-  --text: #172a26;
-  --text-secondary: #334d45;
-  --text-muted: #536d64;
-  --shadow-glow: 0 0 35px rgba(15, 118, 110, 0.12);
-}
+@import "./styles/tokens.css";
 
 :root[data-theme="light"] a:hover {
-  color: var(--text);
+ color: var(--text);
 }
 
 @keyframes floatOrb {

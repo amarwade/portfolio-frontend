@@ -17,6 +17,17 @@ function HeroSection({ profile }) {
   const showPhoto = Boolean(profile.heroImage) && !photoFailed;
   const initials = useMemo(() => initialsFromName(profile.name), [profile.name]);
   const nameParts = profile.name.trim().split(/\s+/);
+  const particles = useMemo(
+    () =>
+      Array.from({ length: 20 }, (_, index) => ({
+        id: index,
+        left: `${Math.random() * 100}%`,
+        top: `${Math.random() * 100}%`,
+        delay: `${Math.random() * 5}s`,
+        duration: `${15 + Math.random() * 10}s`,
+      })),
+    []
+  );
 
   useEffect(() => {
     const timer = setTimeout(() => setIsLoaded(true), 100);
@@ -24,9 +35,19 @@ function HeroSection({ profile }) {
   }, []);
 
   useEffect(() => {
+    if (typeof window === "undefined" || typeof window.matchMedia !== "function") {
+      return undefined;
+    }
+
+    const mediaQuery = window.matchMedia("(prefers-reduced-motion: reduce)");
+    if (mediaQuery.matches) {
+      return undefined;
+    }
+
     const handleMouseMove = (e) => {
       setMousePosition({ x: e.clientX, y: e.clientY });
     };
+
     window.addEventListener('mousemove', handleMouseMove);
     return () => window.removeEventListener('mousemove', handleMouseMove);
   }, []);
@@ -42,16 +63,16 @@ function HeroSection({ profile }) {
   return (
     <section id="about" className="section hero enhanced" aria-labelledby="hero-heading">
       <div className="hero__background">
-        <div className="hero__particles">
-          {[...Array(20)].map((_, i) => (
+        <div className="hero__particles" aria-hidden="true">
+          {particles.map((particle) => (
             <div
-              key={i}
+              key={particle.id}
               className="particle"
               style={{
-                left: `${Math.random() * 100}%`,
-                top: `${Math.random() * 100}%`,
-                animationDelay: `${Math.random() * 5}s`,
-                animationDuration: `${15 + Math.random() * 10}s`
+                left: particle.left,
+                top: particle.top,
+                animationDelay: particle.delay,
+                animationDuration: particle.duration,
               }}
             />
           ))}
